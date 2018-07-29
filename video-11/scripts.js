@@ -19,15 +19,14 @@ function flipCard() {
   }
 
   // second click
-  hasFlippedCard = false;
   secondCard = this;
-  lockBoard = true;
 
   checkForMatch();
 }
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
   isMatch ? disableCards() : unflipCards();
 }
 
@@ -39,6 +38,8 @@ function disableCards() {
 }
 
 function unflipCards() {
+  lockBoard = true;
+
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
@@ -48,16 +49,14 @@ function unflipCards() {
 }
 
 function resetBoard() {
-  hasFlippedCard = false;
-  lockBoard = false;
-  firstCard = null;
-  secondCard = null;
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
 }
 
 (function shuffle() {
   cards.forEach(card => {
-    let ramdomPos = Math.floor(Math.random() * 12);
-    card.style.order = ramdomPos;
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
   });
 })();
 
