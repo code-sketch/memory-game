@@ -23,6 +23,7 @@ function flipCard() {
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
   isMatch ? disableCards() : unflipCards();
 }
 
