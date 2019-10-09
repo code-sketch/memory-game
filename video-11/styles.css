@@ -10,6 +10,10 @@ body {
   background: #060AB2;
 }
 
+#score{
+  font-size: 25px;
+}
+
 .memory-game {
   width: 640px;
   height: 640px;
@@ -52,4 +56,34 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+
+.extra{
+  color:#f4f4f4;
+  font-size:25px;
+  padding-top:calc(25% - 30px);
+  padding-left:40px;
+}
+
+.button{
+  background-color: #b1b32c;
+  border-width:1px;
+  border-color: grey;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: black;
+}
+
+button:focus{
+  outline: none;
 }
